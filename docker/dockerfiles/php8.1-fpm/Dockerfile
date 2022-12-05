@@ -1,5 +1,6 @@
 FROM php:8.1-fpm
 
+ENV COMPOSER_VERSION=2.4.4
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # INSTALL LINUX PACKAGES
@@ -29,4 +30,4 @@ RUN pecl install redis && docker-php-ext-enable redis
 WORKDIR /var/www/html/app
 
 # INSTALL COMPOSER
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version="${COMPOSER_VERSION}"
