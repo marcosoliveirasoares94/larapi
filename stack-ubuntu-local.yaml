@@ -34,7 +34,7 @@ services:
       - ./docker/data/redis:/data
 
   php:
-    build: ./docker/dockerfiles/php7.4-fpm
+    build: ./docker/dockerfiles/php8.1-fpm
     container_name: php
     ports:
       - "9000"
